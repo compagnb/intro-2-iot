@@ -14,5 +14,14 @@ var dist_gauge = new JustGage({
     max: 250,
     title: "Rangefinder (cm)"
 });
+
+function getVoltsReading(){
+   	$.get(volts_url, {access_token: accessToken}, callbackVolts);
+}
+
+function getDistanceReading(){
+   	$.get(distance_url, {access_token: accessToken}, callbackDistance);
+}
+
 getVoltsReading();
 getDistanceReading();
