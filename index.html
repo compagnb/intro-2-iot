@@ -1,39 +1,18 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
-<script>
-var accessToken = "3f0e95aca011b0cdcc821fb34e5a5233bade3298";
-var deviceID = "3f0023000947353138383138"
-var url = "https://api.spark.io/v1/devices/" + deviceID + "/morse";
-
-function callback(data, status){
-	if (data.return_value == 1) {
-		alert("Your Message is being sent");
-	}
-	else
-	{
-		alert("Could not Connect to Photon");
-	}
-}
-
-function sendMorse(){
-	message = $("#message").val();
-   	$.post(url, {params: message, access_token: accessToken}, callback);
-}
-
+    <script>
 </script>
-
-
-</head>	
+</head>
 
 <body>
 
-<h1>Morse Code Sender</h1>	
-<input id="message" value="Hello World" size="64"/>
-<input type="button" value="Send" onclick="sendMorse()" /> <br/>
+<h1>On/Off Control</h1>
+
+<input type="button" onClick="switchOn()" value="ON"/>
+<input type="button" onClick="switchOff()" value="OFF"/>
 
 </body>
 </html>
